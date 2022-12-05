@@ -1,6 +1,5 @@
 import '@/style/index.scss';
 
-import { registerGlobComp } from '@/components/registerGlobComp';
 import router, { setupRouter } from '@/router';
 import { setupRouterGuard } from '@/router/setupRouterGuard';
 import { setupStore } from '@/store';
@@ -19,8 +18,6 @@ function __init__() {
   setupRouter(app);
   // 路由拦截
   setupRouterGuard(router);
-  // 全局组件
-  registerGlobComp(app);
   // 插件
   registerPlugins(app);
 

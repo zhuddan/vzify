@@ -3,5 +3,9 @@ import Layout from '@/layout/index.vue';
 </script>
 
 <template>
-  <Layout />
+  <v-app>
+    <v-app-bar title="Application" />
+    <v-navigation-drawer />
+    <v-main />
+  </v-app>
 </template>
