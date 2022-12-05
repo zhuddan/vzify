@@ -1,0 +1,11 @@
+{
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    }
+  },
+  "cSpell.words": [
+    "Starport"
+  ],
+}
