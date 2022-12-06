@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useLayout } from '@/layout/hooks/useLayout';
 import { useAppConfig } from '@/hooks/config/useAppConfig';
+import logoImg from '@/assets/logo.png';
 const { isSidebarOpen } = useLayout();
 defineOptions({
   name: 'LayoutSidebar',
@@ -11,7 +12,7 @@ const { VITE_APP_TITLE } = useAppConfig();
 <template>
   <v-app-bar color="">
     <template #prepend>
-      <img height="50" width="50" src="@/assets/logo.png" alt="">
+      <v-img height="50" width="50" :src="logoImg" alt="" />
       <h2 style="color: #6200EE">
         {{ VITE_APP_TITLE }}
       </h2>
