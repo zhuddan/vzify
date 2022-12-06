@@ -8,5 +8,7 @@ export function createComponents() {
     resolvers: [
       Vuetify3Resolver(),
     ],
+    dts: './types/components.d.ts',
+    dirs: [],
   });
 }

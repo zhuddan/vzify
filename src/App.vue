@@ -1,11 +1,8 @@
 <script lang="ts" setup>
-import Layout from '@/layout/index.vue';
+import layout from './layout/index.vue';
+const drawer = ref(false);
 </script>
 
 <template>
-  <v-app>
-    <v-app-bar title="Application" />
-    <v-navigation-drawer />
-    <v-main />
-  </v-app>
+  <layout />
 </template>

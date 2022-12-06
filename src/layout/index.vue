@@ -1,25 +1,24 @@
 <script setup lang="ts">
-import LayoutHeader from './components/header/index.vue';
-import LayoutContent from './components/content/index.vue';
-import LayoutFooter from './components/footer/index.vue';
-
-defineOptions({
-  name: 'Layout',
+import { LayoutFooter, LayoutHeader, LayoutMain, LayoutSidebar } from './components';
+import { createLayoutProviderContext } from './context/useLayoutProviderContext';
+const isSidebarOpen = ref(false);
+createLayoutProviderContext({
+  isSidebarOpen,
+  setIsSidebarOpen: (value) => {
+    isSidebarOpen.value = value;
+  },
 });
 </script>
 
 <template>
-  <div class="layout">
+  <v-app>
     <LayoutHeader />
-    <LayoutContent />
+    <LayoutSidebar />
+    <LayoutMain />
     <LayoutFooter />
-  </div>
+  </v-app>
 </template>
 
-<style lang="scss" scoped>
-  .layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+<style scoped>
+
 </style>

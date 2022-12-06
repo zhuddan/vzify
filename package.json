@@ -1,5 +1,5 @@
 {
-  "name": "vitezz",
+  "name": "vzify",
   "private": true,
   "version": "1.0.0",
   "scripts": {
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@iconify/json": "^2.1.148",
+    "@mdi/font": "^7.0.96",
     "@purge-icons/generated": "^0.8.1",
     "@types/fs-extra": "^9.0.13",
     "@types/inquirer": "^8.2.5",

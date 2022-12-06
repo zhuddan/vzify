@@ -3,3 +3,4 @@ dist
 node_modules
 
 types/auto-imports.d.ts
+types/components.d.ts
