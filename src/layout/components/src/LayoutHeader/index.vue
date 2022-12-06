@@ -9,7 +9,7 @@ const { VITE_APP_TITLE } = useAppConfig();
 </script>
 
 <template>
-  <v-app-bar>
+  <v-app-bar color="">
     <template #prepend>
       <img height="50" width="50" src="@/assets/logo.png" alt="">
       <h2 style="color: #6200EE">
