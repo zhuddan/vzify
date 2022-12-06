@@ -1,16 +1,18 @@
 import type { InjectionKey, Ref } from 'vue';
 
 import { createContext, useContext } from '@/hooks/core/useContext';
+import type { LocaleItem } from '@/plugins/vuetify/locale';
 
 export interface LayoutProviderContextProps {
   isSidebarOpen: Ref<boolean>;
-  setIsSidebarOpen(open: boolean): void;
+  locale: Ref<string>;
+  locales: LocaleItem[];
 }
 
 const key: InjectionKey<LayoutProviderContextProps> = Symbol();
 
 export function createLayoutProviderContext(context: LayoutProviderContextProps) {
-  return createContext<LayoutProviderContextProps>(context, key);
+  return createContext<LayoutProviderContextProps>(context, key, { native: true });
 }
 
 export function useLayoutProviderContext() {

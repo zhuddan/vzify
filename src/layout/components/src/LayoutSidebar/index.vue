@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useLayout } from '@/layout/hooks/useLayout';
-const { isSidebarOpen } = useLayout();
+import { useLayoutProviderContext } from '@/layout/context/useLayoutProviderContext';
+const { isSidebarOpen } = useLayoutProviderContext();
 defineOptions({
   name: 'LayoutHeader',
 });
