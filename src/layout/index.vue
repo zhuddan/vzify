@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import { useDisplay } from 'vuetify/lib/framework.mjs';
 import { LayoutFooter, LayoutHeader, LayoutMain, LayoutSidebar } from './components';
 import { createLayoutProviderContext } from './context/useLayoutProviderContext';
-const isSidebarOpen = ref(false);
+
+const { mobile } = useDisplay();
+const isSidebarOpen = ref(!mobile.value);
 createLayoutProviderContext({
   isSidebarOpen,
   setIsSidebarOpen: (value) => {

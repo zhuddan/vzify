@@ -6,7 +6,9 @@ defineOptions({
 
 <template>
   <v-footer app border>
-    copyright
+    <v-container style="padding: 0">
+      copyright
+    </v-container>
   </v-footer>
 </template>
 
