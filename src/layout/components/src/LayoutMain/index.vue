@@ -6,6 +6,7 @@ defineOptions({
 
 <template>
   <v-main>
+    <slot></slot>
     <router-view />
   </v-main>
 </template>

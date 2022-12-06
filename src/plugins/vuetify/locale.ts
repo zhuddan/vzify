@@ -31,7 +31,7 @@ locales.forEach(({ locale, key }) => {
 });
 
 export const locale: VuetifyOptions['locale'] = {
-  locale: 'en',
+  locale: 'zhHans',
   fallback: 'en',
   messages,
 };

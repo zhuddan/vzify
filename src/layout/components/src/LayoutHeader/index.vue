@@ -4,15 +4,10 @@ import logoImg from '@/assets/logo.png';
 import { useDisplay } from 'vuetify/lib/framework.mjs';
 import ButtonTranslate from './ButtonTranslate.vue';
 import { useLayoutProviderContext } from '@/layout/context/useLayoutProviderContext';
+import ButtonTheme from './ButtonTheme.vue';
 defineOptions({
   name: 'LayoutSidebar',
 });
-const items = [
-  { title: 'Click Me' },
-  { title: 'Click Me' },
-  { title: 'Click Me' },
-  { title: 'Click Me 2' },
-];
 const { VITE_APP_TITLE } = useAppConfig();
 const { mobile } = useDisplay();
 const { isSidebarOpen } = useLayoutProviderContext();
@@ -28,7 +23,7 @@ const { isSidebarOpen } = useLayoutProviderContext();
       </h2>
     </template>
     <template #append>
-      <v-btn icon="mdi-heart" />
+      <ButtonTheme />
       <ButtonTranslate />
       <v-btn icon="mdi-dots-vertical" />
     </template>

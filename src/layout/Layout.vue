@@ -8,20 +8,27 @@ import { createLayoutProviderContext } from './context/useLayoutProviderContext'
 const { mobile } = useDisplay();
 const isSidebarOpen = ref(!mobile.value);
 const locale = ref('zhHans');
-
+const d = useLocale();
+const { current, provide } = useLocale();
+const theme = ref<'light' | 'dark'>('dark');
 createLayoutProviderContext({
+  theme,
   locales,
   locale,
   isSidebarOpen,
 });
+const dddd = computed(() => unref(d.current));
 </script>
 
 <template>
-  <v-locale-provider :locale="locale">
+  <v-locale-provider :locale="dddd">
     <v-app>
       <LayoutHeader />
       <LayoutSidebar />
-      <LayoutMain />
+      <LayoutMain>
+        {{ current }}
+        {{ dddd }}
+      </LayoutMain>
       <LayoutFooter />
     </v-app>
   </v-locale-provider>

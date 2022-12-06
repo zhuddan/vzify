@@ -4,9 +4,10 @@ import { createContext, useContext } from '@/hooks/core/useContext';
 import type { LocaleItem } from '@/plugins/vuetify/locale';
 
 export interface LayoutProviderContextProps {
-  isSidebarOpen: Ref<boolean>;
   locale: Ref<string>;
   locales: LocaleItem[];
+  isSidebarOpen: Ref<boolean>;
+  theme: Ref<'light' | 'dark'>;
 }
 
 const key: InjectionKey<LayoutProviderContextProps> = Symbol();
