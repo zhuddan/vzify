@@ -17,7 +17,6 @@ const { VITE_APP_TITLE } = useAppConfig();
       </h2>
       <v-btn icon="mdi-menu" @click="(isSidebarOpen = !isSidebarOpen)" />
     </template>
-
     <template #append>
       <v-btn icon="mdi-heart" />
       <v-btn icon="mdi-magnify" />
