@@ -5,11 +5,7 @@ const tab = ref(null);
 
 <template>
   <v-container>
-    <v-toolbar
-      dark
-      absolute
-      style="z-index: 10"
-    >
+    <v-app-bar>
       <v-tabs
         v-model="tab"
         class="full-height ma-2"
@@ -24,7 +20,7 @@ const tab = ref(null);
           最多收藏
         </v-tab>
       </v-tabs>
-    </v-toolbar>
+    </v-app-bar>
 
     <v-window v-model="tab">
       <v-window-item value="one" class="">
