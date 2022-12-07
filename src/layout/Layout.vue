@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { locales } from '@/plugins/vuetify/locale';
-import type { Theme } from '@/plugins/vuetify/typing';
 import { useDisplay, useLocale, useTheme } from 'vuetify/lib/framework.mjs';
 import { LayoutFooter, LayoutHeader, LayoutMain, LayoutSidebar } from './components';
 import { createAppProviderContext } from './context/useAppProviderContext';
@@ -18,6 +17,7 @@ const theme = computed({
     global.name.value = v;
   },
 });
+
 const locale = computed({
   get() {
     return current.value;
