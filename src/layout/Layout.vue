@@ -1,34 +1,46 @@
 <script setup lang="ts">
 import { locales } from '@/plugins/vuetify/locale';
-import { useCycleList } from '@vueuse/core';
-import { useDisplay, useLocale } from 'vuetify/lib/framework.mjs';
+import type { Theme } from '@/plugins/vuetify/typing';
+import { useDisplay, useLocale, useTheme } from 'vuetify/lib/framework.mjs';
 import { LayoutFooter, LayoutHeader, LayoutMain, LayoutSidebar } from './components';
-import { createLayoutProviderContext } from './context/useLayoutProviderContext';
+import { createAppProviderContext } from './context/useAppProviderContext';
 
 const { mobile } = useDisplay();
+const { current } = useLocale();
 const isSidebarOpen = ref(!mobile.value);
-const locale = ref('zhHans');
-const d = useLocale();
-const { current, provide } = useLocale();
-const theme = ref<'light' | 'dark'>('dark');
-createLayoutProviderContext({
+const { global } = useTheme();
+const isDark = computed(() => global.current.value.dark);
+const theme = computed({
+  get() {
+    return isDark.value ? 'dark' : 'light';
+  },
+  set(v) {
+    global.name.value = v;
+  },
+});
+const locale = computed({
+  get() {
+    return current.value;
+  },
+  set(val) {
+    current.value = val;
+  },
+});
+
+createAppProviderContext({
   theme,
   locales,
   locale,
   isSidebarOpen,
 });
-const dddd = computed(() => unref(d.current));
 </script>
 
 <template>
-  <v-locale-provider :locale="dddd">
+  <v-locale-provider :locale="locale">
     <v-app>
       <LayoutHeader />
       <LayoutSidebar />
-      <LayoutMain>
-        {{ current }}
-        {{ dddd }}
-      </LayoutMain>
+      <LayoutMain />
       <LayoutFooter />
     </v-app>
   </v-locale-provider>

@@ -2,15 +2,15 @@
 import { useAppConfig } from '@/hooks/config/useAppConfig';
 import logoImg from '@/assets/logo.png';
 import { useDisplay } from 'vuetify/lib/framework.mjs';
-import ButtonTranslate from './ButtonTranslate.vue';
-import { useLayoutProviderContext } from '@/layout/context/useLayoutProviderContext';
-import ButtonTheme from './ButtonTheme.vue';
+import LocaleButton from './LocaleButton.vue';
+import ThemeButton from './ThemeButton.vue';
+import { useAppProviderContext } from '@/layout/context/useAppProviderContext';
 defineOptions({
   name: 'LayoutSidebar',
 });
 const { VITE_APP_TITLE } = useAppConfig();
 const { mobile } = useDisplay();
-const { isSidebarOpen } = useLayoutProviderContext();
+const { isSidebarOpen } = useAppProviderContext();
 </script>
 
 <template>
@@ -23,8 +23,8 @@ const { isSidebarOpen } = useLayoutProviderContext();
       </h2>
     </template>
     <template #append>
-      <ButtonTheme />
-      <ButtonTranslate />
+      <ThemeButton />
+      <LocaleButton />
       <v-btn icon="mdi-dots-vertical" />
     </template>
   </v-app-bar>

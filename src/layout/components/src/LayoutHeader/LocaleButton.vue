@@ -1,17 +1,6 @@
 <script setup lang="ts">
-import { useLayoutProviderContext } from '@/layout/context/useLayoutProviderContext';
-import { useLocale } from 'vuetify/lib/framework.mjs';
-const { locale, locales } = useLayoutProviderContext();
-const d = useLocale();
-const current = ref(unref(d.current));
-const dddd = computed({
-  get() {
-    return unref(d.current);
-  },
-  set(val) {
-    d.current.value = val;
-  },
-});
+import { useAppProviderContext } from '@/layout/context/useAppProviderContext';
+const { locale, locales } = useAppProviderContext();
 </script>
 
 <template>
@@ -30,7 +19,7 @@ const dddd = computed({
         :active="locale === item.key"
         active-color="primary"
         :value="item.key"
-        @click="dddd = item.key"
+        @click="locale = item.key"
       >
         <v-list-item-title>{{ item.name }}</v-list-item-title>
       </v-list-item>
