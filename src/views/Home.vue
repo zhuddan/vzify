@@ -5,25 +5,27 @@ const tab = ref(null);
 
 <template>
   <v-container>
-    <v-app-bar>
-      <v-tabs
-        v-model="tab"
-        class="full-height ma-2"
-      >
-        <v-tab value="one">
-          最新
-        </v-tab>
-        <v-tab value="two">
-          最多查看
-        </v-tab>
-        <v-tab value="three">
-          最多收藏
-        </v-tab>
-      </v-tabs>
-    </v-app-bar>
+    <v-toolbar flat class="position-sticky v-app-tabs" density="compact" color="#fff" elevation="1">
+      <v-container>
+        <v-tabs
+          v-model="tab"
+          density="compact"
+        >
+          <v-tab value="one">
+            最新
+          </v-tab>
+          <v-tab value="two">
+            最多查看
+          </v-tab>
+          <v-tab value="three">
+            最多收藏
+          </v-tab>
+        </v-tabs>
+      </v-container>
+    </v-toolbar>
 
     <v-window v-model="tab">
-      <v-window-item value="one" class="">
+      <v-window-item value="one">
         <v-card
           v-for="it in 10"
           :key="it"
@@ -72,4 +74,8 @@ const tab = ref(null);
   </v-container>
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+.v-app-tabs{
+  top: calc(var(--v-layout-top) );
+}
+</style>
